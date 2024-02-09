@@ -2,13 +2,13 @@
 -- RELATED WITH TABLES
 -----------------------------------------------
 
--- To list all the table names of an schema
+-- To list all the table's names of an schema
 SELECT schemaname,
        tablename
 FROM pg_tables
 WHERE schemaname = 'public';
 
--- To list all the table of your database with their primary keys
+-- To list all the tables of your database with their primary keys
 SELECT tc.table_schema,
        tc.table_name,
        kc.column_name
@@ -20,7 +20,7 @@ WHERE tc.constraint_type = 'PRIMARY KEY'
   AND kc.constraint_name = tc.constraint_name
 ORDER BY 1, 2;
 
--- To list all the table indexes
+-- To list all the table's indexes
 SELECT *
 FROM pg_indexes
 WHERE schemaname != 'pg_catalog'
